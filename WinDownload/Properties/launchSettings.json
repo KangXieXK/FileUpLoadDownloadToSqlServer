@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "WinDownload": {
+      "commandName": "Project",
+      "commandLineArgs": "d 127.0.0.1;FICS_GMYG;sa;+ngV5DtELtu4hYYVFjGYBA==; SDS FICS FICS_GMYG FICS3_0.exe"
+    }
+  }
+}

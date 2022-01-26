@@ -1,0 +1,12 @@
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\FileUpdate\bin\Release\net5.0\FileUpdate.deps.json
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\FileUpdate\bin\Release\net5.0\FileUpdate.dll
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\FileUpdate\bin\Release\net5.0\ref\FileUpdate.dll
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\FileUpdate\bin\Release\net5.0\FileUpdate.pdb
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\FileUpdate\obj\Release\net5.0\FileUpdate.GeneratedMSBuildEditorConfig.editorconfig
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\FileUpdate\obj\Release\net5.0\FileUpdate.AssemblyInfoInputs.cache
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\FileUpdate\obj\Release\net5.0\FileUpdate.AssemblyInfo.cs
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\FileUpdate\obj\Release\net5.0\FileUpdate.csproj.CoreCompileInputs.cache
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\FileUpdate\obj\Release\net5.0\FileUpdate.dll
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\FileUpdate\obj\Release\net5.0\ref\FileUpdate.dll
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\FileUpdate\obj\Release\net5.0\FileUpdate.pdb
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\FileUpdate\obj\Release\net5.0\FileUpdate.csproj.AssemblyReference.cache

@@ -1,0 +1,9 @@
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\WinActiveTool\bin\Debug\WinActiveTool.exe
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\WinActiveTool\bin\Debug\WinActiveTool.pdb
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\WinActiveTool\obj\Debug\WinActiveTool.csproj.AssemblyReference.cache
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\WinActiveTool\obj\Debug\WinActiveTool.Form1.resources
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\WinActiveTool\obj\Debug\WinActiveTool.Properties.Resources.resources
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\WinActiveTool\obj\Debug\WinActiveTool.csproj.GenerateResource.cache
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\WinActiveTool\obj\Debug\WinActiveTool.csproj.CoreCompileInputs.cache
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\WinActiveTool\obj\Debug\WinActiveTool.exe
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\WinActiveTool\obj\Debug\WinActiveTool.pdb

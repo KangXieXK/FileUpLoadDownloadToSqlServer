@@ -1,0 +1,11 @@
+{
+  "connetction": {
+    "Server": "172.17.23.135\\MSSQLSERVER2012",
+    "Database": "FICS_GMYG",
+    "Uid": "sa1",
+    "Pwd": "+ngV5DtELtu4hYYVFjGYBA=="
+  },
+  "Port": 8221,
+  "LastUploadPath":"D:\\D\\doc\\开元平方\\2021年\\20210406---裕光电厂\\CODE2\\FICS\\FICS3_0\\bin\\Upload",
+  "LastDownPath":"D:\\D\\doc\\开元平方\\2021年\\20210406---裕光电厂\\CODE2\\FICS\\FICS3_0\\bin\\DownLoad",
+}

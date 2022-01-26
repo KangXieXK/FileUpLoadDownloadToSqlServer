@@ -1,0 +1,120 @@
+{
+  "MsSql": {
+    "Cefly": {
+      "Host": "172.17.23.160",
+      "Data": "Cefly",
+      "User": "sa",
+      "Pass": "QkN2EEt5MSsWqeCn/RkboA==",
+      "Time": "5"
+    },
+    "test2": {
+      "Host": "172.17.23.135\\MSSQLSERVER2012",
+      "Data": "DPSMAIN",
+      "User": "pfrj",
+      "Pass": "1uapWsgAH95V/Xfi5XIv9Q==",
+      "Time": "5"
+    },
+    "test": {
+      "Host": ".",
+      "Data": "DPSMAIN_XY",
+      "User": "sa",
+      "Pass": "DOAyQzVlbiO6XrAJQkcnNw==",
+      "Time": "5"
+    },
+    "APS1": {
+      "Host": ".",
+      "Data": "DPSMAIN_XY",
+      "User": "sa",
+      "Pass": "DOAyQzVlbiO6XrAJQkcnNw==",
+      "Time": "5"
+    },
+    "CYQ1": {
+      "Host": ".",
+      "Data": "DPSMAIN_XY",
+      "User": "sa",
+      "Pass": "DOAyQzVlbiO6XrAJQkcnNw==",
+      "Time": "5"
+    },
+    "CYP2": {
+      "Host": ".",
+      "Data": "KY_CYQ10",
+      "User": "sa",
+      "Pass": "DOAyQzVlbiO6XrAJQkcnNw==",
+      "Time": "5"
+    },
+    "CYP1": {
+      "Host": ".",
+      "Data": "KY_CYQ10",
+      "User": "sa",
+      "Pass": "DOAyQzVlbiO6XrAJQkcnNw==",
+      "Time": "5"
+    },
+    "APS2": {
+      "Host": ".",
+      "Data": "KY_APS1",
+      "User": "sa",
+      "Pass": "DOAyQzVlbiO6XrAJQkcnNw==",
+      "Time": "5"
+    },
+    "CYQ2": {
+      "Host": ".",
+      "Data": "KY_CYQ1",
+      "User": "sa",
+      "Pass": "DOAyQzVlbiO6XrAJQkcnNw==",
+      "Time": "5"
+    },
+    "CYQ3": {
+      "Host": ".",
+      "Data": "KY_CYQ1",
+      "User": "sa",
+      "Pass": "DOAyQzVlbiO6XrAJQkcnNw==",
+      "Time": "5"
+    },
+    "MAT1": {
+      "Host": ".",
+      "Data": "DPSMAIN",
+      "User": "sa",
+      "Pass": "DOAyQzVlbiO6XrAJQkcnNw==",
+      "Time": "5"
+    },
+    "MAT2": {
+      "Host": ".",
+      "Data": "KYPLATFROM",
+      "User": "sa",
+      "Pass": "DOAyQzVlbiO6XrAJQkcnNw==",
+      "Time": "5"
+    },
+    "RILS1": {
+      "Host": ".",
+      "Data": "5E-RILS",
+      "User": "sa",
+      "Pass": "DOAyQzVlbiO6XrAJQkcnNw==",
+      "Time": "5"
+    },
+    "test3": {
+      "Host": ".",
+      "Data": "KYPLATFROM",
+      "User": "sa",
+      "Pass": "9iKdookN0MuDl3Gsv01xlQ==",
+      "Time": "5"
+    }
+  },
+  "DeviceSet": {
+    "Cefly": {
+      "HostIP": "192.168.1.21",
+      "Port": "80",
+      "OPCName": "NT6000.eNetOPC"
+    }
+  },
+  "Mutex": "Sample Device System Build On Cefly @ 2020/02/20",
+  "opcServer": "http://192.168.1.21:80",
+  "OPCName": "Matrikon.OPC.Simulation",
+  "OPCName1": "Knight.OPC.Server.Demo",
+  "VHFReadWriteConsoleExePath": "..\\..\\..\\VHFReadWriteConsole\\bin\\Debug\\VHFReadWriteConsole.exe",
+  "TimespanOfClearLogByHour": "1",
+  "ReadMode": "1",
+  "OPCServerPath": "",
+  "OPCServerProcessName":""
+
+
+}

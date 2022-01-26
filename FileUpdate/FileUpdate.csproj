@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="linq2db.SqlServer" Version="3.3.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="2.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="DataModels.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+
+</Project>

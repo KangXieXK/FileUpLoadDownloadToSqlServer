@@ -1,0 +1,11 @@
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\FileUpdateFrameWork\bin\Debug\FileUpdateFrameWork.dll
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\FileUpdateFrameWork\bin\Debug\FileUpdateFrameWork.pdb
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\FileUpdateFrameWork\bin\Debug\SqlSugar.dll
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\FileUpdateFrameWork\bin\Debug\System.Data.SQLite.dll
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\FileUpdateFrameWork\bin\Debug\MySql.Data.dll
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\FileUpdateFrameWork\bin\Debug\Newtonsoft.Json.dll
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\FileUpdateFrameWork\obj\Debug\FileUpdateFrameWork.csproj.AssemblyReference.cache
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\FileUpdateFrameWork\obj\Debug\FileUpdateFrameWork.csproj.CoreCompileInputs.cache
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\FileUpdateFrameWork\obj\Debug\FileUpdateFrameWork.csproj.CopyComplete
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\FileUpdateFrameWork\obj\Debug\FileUpdateFrameWork.dll
+D:\doc\2021\FileUpdate\UpdateForCSKYPF\FileUpdateFrameWork\obj\Debug\FileUpdateFrameWork.pdb

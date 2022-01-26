@@ -1,0 +1,10 @@
+{
+  "connetction": {
+    "Server": "172.17.23.135\\MSSQLSERVER2012",
+    "Database": "TestForUpload",
+    "Uid": "pfrj",
+    "Pwd": "j/G/XTZFORpgoyO8S/fPJg=="
+  },
+  "Port": 8221
+
+}
