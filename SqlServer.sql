@@ -1,0 +1,10 @@
+
+CREATE TABLE [dbo].[SYS_FILEVERSION](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[VERSION] [varchar](50) NULL,
+	[FILENAME] [varchar](1024) NULL,
+	[MD5] [varchar](1024) NULL,
+	[IMG] [image] NULL,
+	[PROGRAM_NAME] [varchar](50) NULL,
+	[UPLOAD_TIME] [datetime] NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
