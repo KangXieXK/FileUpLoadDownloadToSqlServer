@@ -303,3 +303,5 @@ WinUpdateFrameWork/obj/Debug/WinUpdateFrameWork.csproj.CoreCompileInputs.cache
 WinUpdateFrameWork/obj/Debug/WinUpdateFrameWork.csproj.FileListAbsolute.txt
 WinUpdateFrameWork/obj/Debug/WinUpdateFrameWork.exe
 WinUpdateFrameWork/obj/Debug/WinUpdateFrameWork.pdb
+WinUpdate/obj/Debug/net5.0-windows/WinUpdate.assets.cache
+WinDownload/obj/Debug/net5.0-windows/apphost.exe
