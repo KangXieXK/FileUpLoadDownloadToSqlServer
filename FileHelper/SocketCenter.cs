@@ -29,9 +29,7 @@ namespace FileHelper
             //wsServer = new WSServer(port, System.Security.Authentication.SslProtocols.None, "", "", 1024);
             //wsServer.OnMessage += WsServer_OnMessage;
             //wsServer.Start();
-            SuperSocket.WebSocket.WebSocketServer webSocketServer = new SuperSocket.WebSocket.WebSocketServer();
-            webSocketServer.
-            webSocketServer.Start();
+            
         }
         
 

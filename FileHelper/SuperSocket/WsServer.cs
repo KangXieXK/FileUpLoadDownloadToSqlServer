@@ -1,17 +1,14 @@
-﻿using SuperSocket.Common;
-using SuperSocket.SocketBase;
-using SuperSocket.SocketBase.Config;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using SuperSocket.SocketBase.Config;
+using SuperSocket.WebSocket;
 namespace FileHelper
 {
-    public class TelnetServer : AppServer<TelnetSession>
+    public class WsServer:SuperSocket.WebSocket.WebSocketServer<WsSession>
     {
-
         protected override bool Setup(IRootConfig rootConfig, IServerConfig config)
         {
             //var m_PolicyFile = config.Options.GetValue("policyFile");
