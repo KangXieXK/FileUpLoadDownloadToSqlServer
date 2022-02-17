@@ -336,3 +336,15 @@ WinUpdate/obj/Debug/net5.0-windows/WinUpdate.pdb
 WinUpdate/obj/project.assets.json
 WinUpdate/obj/WinUpdate.csproj.nuget.dgspec.json
 WinUpdate/obj/WinUpdate.csproj.nuget.g.props
+FileUpdate/obj/Debug/net5.0/FileUpdate.assets.cache
+WinDownload/obj/Debug/net5.0-windows/apphost.exe
+WinDownload/obj/Debug/net5.0-windows/WinDownload.assets.cache
+WinDownload/obj/project.assets.json
+WinDownload/obj/WinDownload.csproj.nuget.dgspec.json
+WinDownload/obj/WinDownload.csproj.nuget.g.props
+WinUpdate/obj/Debug/net5.0-windows/WinUpdate.assets.cache
+WinUpdate/obj/project.assets.json
+WinUpdate/obj/WinUpdate.csproj.nuget.dgspec.json
+WinUpdate/obj/WinUpdate.csproj.nuget.g.props
+WinDownload/obj/Debug/net5.0-windows/apphost.exe
+WinUpdate/obj/Debug/net5.0-windows/WinUpdate.assets.cache

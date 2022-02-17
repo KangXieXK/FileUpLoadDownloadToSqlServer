@@ -22,3 +22,15 @@ D:\D\doc\开元平方\2021年\设备调试小软件\UpdateForCSKYPF\FileUpdate\o
 D:\D\doc\开元平方\2021年\设备调试小软件\UpdateForCSKYPF\FileUpdate\obj\Debug\net5.0\FileUpdate.dll
 D:\D\doc\开元平方\2021年\设备调试小软件\UpdateForCSKYPF\FileUpdate\obj\Debug\net5.0\ref\FileUpdate.dll
 D:\D\doc\开元平方\2021年\设备调试小软件\UpdateForCSKYPF\FileUpdate\obj\Debug\net5.0\FileUpdate.pdb
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\FileUpdate\bin\Debug\net5.0\FileUpdate.deps.json
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\FileUpdate\bin\Debug\net5.0\FileUpdate.dll
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\FileUpdate\bin\Debug\net5.0\ref\FileUpdate.dll
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\FileUpdate\bin\Debug\net5.0\FileUpdate.pdb
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\FileUpdate\obj\Debug\net5.0\FileUpdate.csproj.AssemblyReference.cache
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\FileUpdate\obj\Debug\net5.0\FileUpdate.GeneratedMSBuildEditorConfig.editorconfig
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\FileUpdate\obj\Debug\net5.0\FileUpdate.AssemblyInfoInputs.cache
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\FileUpdate\obj\Debug\net5.0\FileUpdate.AssemblyInfo.cs
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\FileUpdate\obj\Debug\net5.0\FileUpdate.csproj.CoreCompileInputs.cache
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\FileUpdate\obj\Debug\net5.0\FileUpdate.dll
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\FileUpdate\obj\Debug\net5.0\ref\FileUpdate.dll
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\FileUpdate\obj\Debug\net5.0\FileUpdate.pdb

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CSIISHelper": {
+      "commandName": "Project",
+      "commandLineArgs": "36589 D:\\doc\\2021\\20210421格盟裕光\\git\\FileUpLoadDownloadToSqlServer\\CSIISHelper\\bin\\Release\\net5.0\\publish\\temp 127.0.0.1 D:\\doc\\2021\\20210421格盟裕光\\git\\FileUpLoadDownloadToSqlServer\\CSIISHelper\\bin\\Release\\net5.0\\publish\\temp2"
+    }
+  }
+}

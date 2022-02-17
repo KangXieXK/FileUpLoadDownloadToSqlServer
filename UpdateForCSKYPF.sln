@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinUpdateFrameWork", "WinUp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinActiveTool", "WinActiveTool\WinActiveTool.csproj", "{91320BA1-9449-49F9-8AE2-600FAF5EE7CE}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSIISHelper", "CSIISHelper\CSIISHelper.csproj", "{72F1B168-FF72-4D34-A0D8-FF16131B9C1C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileHelper", "FileHelper\FileHelper.csproj", "{84A644A7-9969-4561-BBA2-CC818A5989E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{91320BA1-9449-49F9-8AE2-600FAF5EE7CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91320BA1-9449-49F9-8AE2-600FAF5EE7CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91320BA1-9449-49F9-8AE2-600FAF5EE7CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72F1B168-FF72-4D34-A0D8-FF16131B9C1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72F1B168-FF72-4D34-A0D8-FF16131B9C1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72F1B168-FF72-4D34-A0D8-FF16131B9C1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72F1B168-FF72-4D34-A0D8-FF16131B9C1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84A644A7-9969-4561-BBA2-CC818A5989E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84A644A7-9969-4561-BBA2-CC818A5989E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84A644A7-9969-4561-BBA2-CC818A5989E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84A644A7-9969-4561-BBA2-CC818A5989E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

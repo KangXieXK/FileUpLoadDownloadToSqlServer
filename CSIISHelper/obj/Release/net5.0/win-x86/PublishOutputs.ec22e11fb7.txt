@@ -1,0 +1,7 @@
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\CSIISHelper\bin\Release\net5.0\publish\CSIISHelper.pdb
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\CSIISHelper\bin\Release\net5.0\publish\clrcompression.dll
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\CSIISHelper\bin\Release\net5.0\publish\clrjit.dll
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\CSIISHelper\bin\Release\net5.0\publish\coreclr.dll
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\CSIISHelper\bin\Release\net5.0\publish\mscordaccore.dll
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\CSIISHelper\bin\Release\net5.0\publish\FileHelper.pdb
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\CSIISHelper\bin\Release\net5.0\publish\CSIISHelper.exe

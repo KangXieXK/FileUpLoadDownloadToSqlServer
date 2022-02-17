@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>CSIISHelper</id>
+    <version>1.0.0</version>
+    <authors>CSIISHelper</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net5.0">
+        <dependency id="SocketHelper" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="SAEA.FileSocket" version="7.0.0.2" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\CSIISHelper\bin\Debug\net5.0\CSIISHelper.runtimeconfig.json" target="lib\net5.0\CSIISHelper.runtimeconfig.json" />
+    <file src="D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\CSIISHelper\bin\Debug\net5.0\CSIISHelper.dll" target="lib\net5.0\CSIISHelper.dll" />
+  </files>
+</package>

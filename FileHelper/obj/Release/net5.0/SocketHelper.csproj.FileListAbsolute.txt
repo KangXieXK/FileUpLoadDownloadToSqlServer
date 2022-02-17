@@ -1,0 +1,12 @@
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\SocketHelper\bin\Release\net5.0\SocketHelper.deps.json
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\SocketHelper\bin\Release\net5.0\SocketHelper.dll
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\SocketHelper\bin\Release\net5.0\ref\SocketHelper.dll
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\SocketHelper\bin\Release\net5.0\SocketHelper.pdb
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\SocketHelper\obj\Release\net5.0\SocketHelper.GeneratedMSBuildEditorConfig.editorconfig
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\SocketHelper\obj\Release\net5.0\SocketHelper.AssemblyInfoInputs.cache
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\SocketHelper\obj\Release\net5.0\SocketHelper.AssemblyInfo.cs
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\SocketHelper\obj\Release\net5.0\SocketHelper.csproj.CoreCompileInputs.cache
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\SocketHelper\obj\Release\net5.0\SocketHelper.dll
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\SocketHelper\obj\Release\net5.0\ref\SocketHelper.dll
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\SocketHelper\obj\Release\net5.0\SocketHelper.pdb
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\SocketHelper\obj\Release\net5.0\SocketHelper.csproj.AssemblyReference.cache

@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="SAEA.FileSocket" Version="7.0.0.2" />
+    <PackageReference Include="SuperSocket" Version="1.6.6.1" />
+    <PackageReference Include="SuperSocket.WebSocket" Version="1.6.6.1" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,12 @@
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\FileHelper\bin\Debug\net5.0\FileHelper.deps.json
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\FileHelper\bin\Debug\net5.0\FileHelper.dll
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\FileHelper\bin\Debug\net5.0\ref\FileHelper.dll
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\FileHelper\bin\Debug\net5.0\FileHelper.pdb
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\FileHelper\obj\Debug\net5.0\FileHelper.csproj.AssemblyReference.cache
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\FileHelper\obj\Debug\net5.0\FileHelper.GeneratedMSBuildEditorConfig.editorconfig
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\FileHelper\obj\Debug\net5.0\FileHelper.AssemblyInfoInputs.cache
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\FileHelper\obj\Debug\net5.0\FileHelper.AssemblyInfo.cs
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\FileHelper\obj\Debug\net5.0\FileHelper.csproj.CoreCompileInputs.cache
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\FileHelper\obj\Debug\net5.0\FileHelper.dll
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\FileHelper\obj\Debug\net5.0\ref\FileHelper.dll
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\FileHelper\obj\Debug\net5.0\FileHelper.pdb
