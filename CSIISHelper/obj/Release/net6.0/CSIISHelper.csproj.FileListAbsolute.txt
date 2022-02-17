@@ -1,0 +1,5 @@
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\CSIISHelper\obj\Release\net6.0\CSIISHelper.csproj.AssemblyReference.cache
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\CSIISHelper\obj\Release\net6.0\CSIISHelper.GeneratedMSBuildEditorConfig.editorconfig
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\CSIISHelper\obj\Release\net6.0\CSIISHelper.AssemblyInfoInputs.cache
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\CSIISHelper\obj\Release\net6.0\CSIISHelper.AssemblyInfo.cs
+D:\doc\2021\20210421格盟裕光\git\FileUpLoadDownloadToSqlServer\CSIISHelper\obj\Release\net6.0\CSIISHelper.csproj.CoreCompileInputs.cache
