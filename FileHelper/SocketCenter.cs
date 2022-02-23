@@ -4,6 +4,7 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.WebSockets;
+using Autofac;
 
 namespace FileHelper
 {
@@ -13,111 +14,54 @@ namespace FileHelper
 
         public string FileStorePath { get; set; }
 
-        public Encoding Codeing = Encoding.UTF8;
-        public void StartReceive(string path)
+        public WsServer Server { get; set; }
+
+        public WsClient Client { get; set; }
+
+        ContainerBuilder builder = new ContainerBuilder();
+        IContainer container { get; set; }
+        public async void StartWsserver(int port)
         {
-            fileTransfer?.Dispose();
-            fileTransfer = new FileTransfer(path);
-            //fileTransfer.OnReceiveEnd += fileTransfer_OnReceiveEnd;
+            builder.RegisterType<Aes>().As<ICrypt>();
+            builder.RegisterType<MessageJsonModel>().As<IMessageModel>();
+            builder.RegisterType<MessageJsonModel>().As<IMessage>();
+            container = builder.Build();
 
-            //fileTransfer.OnDisplay += fileTransfer_OnDisplay;
-            fileTransfer.Start();
-        }
-
-        public void StartWsserver(int port)
-        {
-            //wsServer = new WSServer(port, System.Security.Authentication.SslProtocols.None, "", "", 1024);
-            //wsServer.OnMessage += WsServer_OnMessage;
-            //wsServer.Start();
-            
-        }
-        
-
-
-        public void UploadFileListFirstStep(string path, string ip, int port)
-        {
-            var fc = new FileCheck();
-            var result = fc.CheckBaseFolder(path);
-            if (result?.Count > 0)
-            {
-                MessageJsonModel mjm = new MessageJsonModel()
+            Server = new WsServer();
+            Server.MessageAction += new Action<SuperSocket.WebSocket.Server.WebSocketSession,
+                SuperSocket.WebSocket.WebSocketPackage>((session, msg) =>
                 {
-                    BussinessID = 1,
-                    BussinessResult = 0,
-                    Content = result,
-                };
-                string resultstr = Newtonsoft.Json.JsonConvert.SerializeObject(mjm);
-
-            }
-        }
-        public List<FileInfoxk> GetUploadFile(object obj)
-        {
-            List<FileInfoxk> mjm = Newtonsoft.Json.JsonConvert.DeserializeObject<List<FileInfoxk>>(obj.ToString());
-            List<FileInfoxk> temp = new List<FileInfoxk>();
-            if (mjm?.Count > 0)
-            {
-                var fc = new FileCheck();
-                var old = fc.CheckBaseFolder(this.FileStorePath);
-                var result = fc.Compare(mjm, old);
-                if (result?.Count > 0)
-                {
-                    var deletelist = result.FindAll(i => i.result == 2 || i.result == 3);
-                    var uploadlist = result.FindAll(i => i.result == 1 || i.result == 2);
-                    foreach (var item in deletelist)
+                    using (var scope = container.BeginLifetimeScope())
                     {
-                        fc.DeleteFile(item.fileInfoxk, this.FileStorePath);
+                        var imm = scope.Resolve<IMessageModel>();
+                        var result = imm.Objectal(msg.Message);
+                        result.DecryptSelf(container.Resolve<ICrypt>());
+                        Console.WriteLine(result.Jsonal());
                     }
-                    temp.AddRange(uploadlist.Select(i => i.fileInfoxk));
-                }
-            }
-            return temp;
+                });
+            await Server.Start();
         }
 
-        private void WsClient_OnMessage()
+        public void Send(IMessageModel mjm, string ip, int port)
         {
-            string str = string.Empty;
-            MessageJsonModel mjm = Newtonsoft.Json.JsonConvert.DeserializeObject<MessageJsonModel>(str);
-            if (mjm != null)
+            if (Client == null)
             {
-                switch (mjm.BussinessID)
+                Client = new WsClient();
+                Client.CreateClient(ip, port);
+                Client.client.MessageReceived.Subscribe(msg =>
                 {
-                    case 1:
-                        GetUploadFile(mjm.Content); break;
-                    default: break;
-                }
+                    using (var scope = container.BeginLifetimeScope())
+                    {
+                        var imm = scope.Resolve<IMessageModel>();
+                        var result = imm.Objectal(msg.Text);
+                    }
+                });
             }
-        }
-
-
-
-        private void WsServer_OnMessage(string id, byte[] data)
-        {
-            string str = Codeing.GetString(data);
-            MessageJsonModel mjm = Newtonsoft.Json.JsonConvert.DeserializeObject<MessageJsonModel>(str);
-
-            if (mjm != null)
+            using (var scope = container.BeginLifetimeScope())
             {
-
-                switch (mjm.BussinessID)
-                {
-                    case 1:
-                        {
-                            var result = GetUploadFile(mjm.Content);
-                            MessageJsonModel mjm2 = new MessageJsonModel()
-                            {
-                                BussinessID = 2,
-                                BussinessResult = 0,
-                                Content = result,
-                            };
-                            string mjm2str = Newtonsoft.Json.JsonConvert.SerializeObject(mjm2);
-                            byte[] byteArray = Codeing.GetBytes(mjm2str);
-
-                        }; break;
-                    default: break;
-                }
+                mjm.EncryptSelf(container.Resolve<ICrypt>());
             }
+            Client.Send(mjm.Jsonal());
         }
-
-
     }
 }

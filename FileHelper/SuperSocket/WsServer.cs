@@ -3,34 +3,44 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SuperSocket.SocketBase.Config;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using SuperSocket;
+using SuperSocket.ProtoBase;
 using SuperSocket.WebSocket;
+using SuperSocket.WebSocket.Server;
 namespace FileHelper
 {
-    public class WsServer:SuperSocket.WebSocket.WebSocketServer<WsSession>
+    public class WsServer
     {
-        protected override bool Setup(IRootConfig rootConfig, IServerConfig config)
+        public IHost Host { get; set; }
+        public IServer Server { get; set; }
+
+        public List<WebSocketSession> SessionList { get; set; }
+        public Action<WebSocketSession, WebSocketPackage> MessageAction { get; set; }
+        public async Task Start()
         {
-            //var m_PolicyFile = config.Options.GetValue("policyFile");
-
-            //if (string.IsNullOrEmpty(m_PolicyFile))
-            //{
-            //    if (Logger.IsErrorEnabled)
-            //        Logger.Error("Configuration option policyFile is required!");
-            //    return false;
-            //}
-
-            return base.Setup(rootConfig, config);
+            SessionList = new List<WebSocketSession>();
+            Host = WebSocketHostBuilder.Create()
+                        .UseWebSocketMessageHandler(
+                            async (session, message) =>
+                            {
+                                await Task.Run(() => { if (MessageAction != null) MessageAction(session, message); });
+                            }
+                        )
+                        .ConfigureLogging((hostCtx, loggingBuilder) =>
+                        {
+                            loggingBuilder.AddConsole();
+                        })
+                        .Build();
+            Server = Host.AsServer();
+            await Host.RunAsync();
         }
 
-        protected override void OnStarted()
+        public async Task Stop()
         {
-            base.OnStarted();
-        }
-
-        protected override void OnStopped()
-        {
-            base.OnStopped();
+            
+            await Host.StopAsync();
         }
     }
 }

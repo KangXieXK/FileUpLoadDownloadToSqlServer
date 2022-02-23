@@ -8,7 +8,7 @@ namespace CSIISHelper
 {
     class Program
     {
-        static void Main(string[] args)
+         static void Main(string[] args)
         {
             //FileHelper.FileMaster fileMaster = new FileHelper.FileMaster();
             //fileMaster.StartReceive(args[0]);
@@ -20,39 +20,10 @@ namespace CSIISHelper
             //    fileMaster.Send(filename, ip);
             //}
             //Console.ReadLine();
-
-            WsServer ws = new WsServer();
-            ws.NewMessageReceived += Ws_NewMessageReceived; ;//当有信息传入时
-            ws.NewSessionConnected += Ws_NewSessionConnected; ;//当有用户连入时
-            ws.SessionClosed += Ws_SessionClosed; ;//当有用户退出时
-            ws.NewDataReceived += Ws_NewDataReceived; ;//当有数据传入时
-            if (ws.Setup(10086))//绑定端口
-                ws.Start();//启动服务  
+            SocketCenter sc = new SocketCenter();
+            sc.StartWsserver(2020);
+            sc.Send(new MessageJsonModel() { BussinessID=1,Content="string",Key="key" }, "127.0.0.1", 2020);
             string str = Console.ReadLine();
         }
-
-        private static void Ws_NewDataReceived(WsSession session, byte[] value)
-        {
-            Console.WriteLine(System.Text.Encoding.UTF8.GetString(value));
-        }
-
-        private static void Ws_SessionClosed(WsSession session, SuperSocket.SocketBase.CloseReason value)
-        {
-            Console.WriteLine(value.ToString());
-        }
-
-
-        private static void Ws_NewMessageReceived(WsSession session, string value)
-        {
-            Console.WriteLine(value);
-        }
-
-        private static void Ws_NewSessionConnected(WsSession session)
-        {
-            Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(session));
-        }
-
-        static SocketCenter socketCenter;
-
     }
 }

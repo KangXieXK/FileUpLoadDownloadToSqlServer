@@ -14,7 +14,7 @@ namespace FileHelper
 
         protected override bool Setup(IRootConfig rootConfig, IServerConfig config)
         {
-            //var m_PolicyFile = config.Options.GetValue("policyFile");
+            var m_PolicyFile = config.Options.GetValue("policyFile");
 
             //if (string.IsNullOrEmpty(m_PolicyFile))
             //{

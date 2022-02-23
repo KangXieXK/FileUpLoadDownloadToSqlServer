@@ -10,6 +10,7 @@ namespace FileHelper
 {
     public class FileCheck
     {
+        public Encoding Codeing = Encoding.UTF8;
         public List<FileInfoxk> CheckBaseFolder(string path)
         {
             List<FileInfoxk> fileModes = new List<FileInfoxk>();
@@ -188,6 +189,94 @@ namespace FileHelper
                     bw.Write(fileinfo.IMG, 0, fileinfo.IMG.Length);
                     bw.Close();
                     fs.Close();
+                }
+            }
+        }
+
+
+        public string UploadFileListFirstStep(string path)
+        {
+            var fc = new FileCheck();
+            var result = fc.CheckBaseFolder(path);
+            string resultstr = string.Empty;
+            if (result?.Count > 0)
+            {
+                MessageJsonModel mjm = new MessageJsonModel()
+                {
+                    BussinessID = 1,
+                    BussinessResult = 0,
+                    Content = result,
+                };
+                resultstr = Newtonsoft.Json.JsonConvert.SerializeObject(mjm);
+            }
+            return resultstr;
+        }
+
+
+        public List<FileInfoxk> GetUploadFile(object obj,string FileStorePath)
+        {
+            List<FileInfoxk> mjm = Newtonsoft.Json.JsonConvert.DeserializeObject<List<FileInfoxk>>(obj.ToString());
+            List<FileInfoxk> temp = new List<FileInfoxk>();
+            if (mjm?.Count > 0)
+            {
+                var fc = new FileCheck();
+                var old = fc.CheckBaseFolder(FileStorePath);
+                var result = fc.Compare(mjm, old);
+                if (result?.Count > 0)
+                {
+                    var deletelist = result.FindAll(i => i.result == 2 || i.result == 3);
+                    var uploadlist = result.FindAll(i => i.result == 1 || i.result == 2);
+                    foreach (var item in deletelist)
+                    {
+                        fc.DeleteFile(item.fileInfoxk,FileStorePath);
+                    }
+                    temp.AddRange(uploadlist.Select(i => i.fileInfoxk));
+                }
+            }
+            return temp;
+        }
+
+        private void WsClient_OnMessage()
+        {
+            string str = string.Empty;
+            MessageJsonModel mjm = Newtonsoft.Json.JsonConvert.DeserializeObject<MessageJsonModel>(str);
+            if (mjm != null)
+            {
+                switch (mjm.BussinessID)
+                {
+                    case 1:
+                        //GetUploadFile(mjm.Content); break;
+                    default: break;
+                }
+            }
+        }
+
+
+
+        private void WsServer_OnMessage(string id, byte[] data)
+        {
+            string str = Codeing.GetString(data);
+            MessageJsonModel mjm = Newtonsoft.Json.JsonConvert.DeserializeObject<MessageJsonModel>(str);
+
+            if (mjm != null)
+            {
+
+                switch (mjm.BussinessID)
+                {
+                    case 1:
+                        {
+                            //var result = GetUploadFile(mjm.Content);
+                            //MessageJsonModel mjm2 = new MessageJsonModel()
+                            //{
+                            //    BussinessID = 2,
+                            //    BussinessResult = 0,
+                            //    Content = result,
+                            //};
+                            //string mjm2str = Newtonsoft.Json.JsonConvert.SerializeObject(mjm2);
+                            //byte[] byteArray = Codeing.GetBytes(mjm2str);
+
+                        }; break;
+                    default: break;
                 }
             }
         }
