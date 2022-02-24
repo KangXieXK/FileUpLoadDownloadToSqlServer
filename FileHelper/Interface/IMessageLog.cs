@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FileHelper
+namespace FileHelper.Interface
 {
-    public interface IMessageBussiness:IModelBussiness
+    public interface IMessageLog
     {
-        IMessageModel Work(IMessageModel messageModel);
 
     }
 }

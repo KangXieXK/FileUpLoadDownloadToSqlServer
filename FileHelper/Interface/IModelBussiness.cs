@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace FileHelper
 {
-    public interface IMessageBussiness:IModelBussiness
+    public interface IModelBussiness
     {
-        IMessageModel Work(IMessageModel messageModel);
-
+        string GetKey();
     }
 }

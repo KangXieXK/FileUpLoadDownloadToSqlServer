@@ -1,0 +1,12 @@
+[日志开始]
+2022-02-24 15:40:19,962 ---[1] INFO  NETCorelog4net [(null)] --- 
+Application [ConsoleApp] Start
+2022-02-24 15:40:20,015 ---[1] DEBUG NETCorelog4net [(null)] --- 
+This is a debug message
+[日志结束]
+[日志开始]
+2022-02-24 15:40:35,346 ---[1] INFO  NETCorelog4net [(null)] --- 
+Application [ConsoleApp] Start
+2022-02-24 15:40:35,563 ---[1] DEBUG NETCorelog4net [(null)] --- 
+This is a debug message
+[日志结束]

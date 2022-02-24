@@ -55,5 +55,10 @@ namespace FileHelper
             IMessageModel mjm = Newtonsoft.Json.JsonConvert.DeserializeObject<MessageJsonModel>(str);
             return mjm;
         }
+
+        public string GetKey()
+        {
+            return this.Key;
+        }
     }
 }

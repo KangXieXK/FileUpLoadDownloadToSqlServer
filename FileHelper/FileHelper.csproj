@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="Autofac" Version="6.3.0" />
+    <PackageReference Include="log4net" Version="2.0.14" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="SAEA.FileSocket" Version="7.0.0.2" />
     <PackageReference Include="SuperSocket" Version="2.0.0-beta.10" />
