@@ -25,6 +25,7 @@ namespace FileHelper
                     {
                         msg.ServerPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, msg.ServerPath);
                     }
+                    
 
                     var old = this.CheckBaseFolder(msg.ServerPath);
                     var result = this.Compare(msg.listfile, old);
@@ -47,6 +48,10 @@ namespace FileHelper
                                 listfile = uploadlist.Select(i => i.fileInfoxk).ToList(),
                                 quest = msg.quest + 1
                             };
+                            foreach (var item in uploadlist)
+                            {
+                                CreateFile(item.fileInfoxk, msg.ServerPath);
+                            }
                             messageModel.SetMessageResponse(responsemsg);
                         }
                     }
@@ -55,6 +60,7 @@ namespace FileHelper
             return messageModel;
         }
 
+        public string Key { get { return "Check"; } set {; } }
         public string GetKey()
         {
             return "Check";
@@ -94,8 +100,8 @@ namespace FileHelper
                 string str;
                 byte[] btye = this.GetFileBytes(item.FullName, out str);
                 string strname = Path.Combine(ParentDir, item.Name);
-                fileModes.Add(GetfileMode(strname, str, Program, Version, item.FullName));
-                Console.WriteLine("检测" + Program + "----版本" + Version + "文件" + strname + "上传完成");
+                fileModes.Add(GetfileMode(strname, str, Program, Version, item.FullName, btye));
+                Console.WriteLine("检测" + Program + "----版本" + Version + "文件" + strname + "");
             }
             foreach (DirectoryInfo item in dichild)
             {
@@ -127,7 +133,7 @@ namespace FileHelper
                     }
                     catch (Exception ex)
                     {
-                        throw ex;
+                        throw new Exception("加密失败");
                     }
                 }
                 return bFile;
@@ -215,6 +221,7 @@ namespace FileHelper
             string filePath = Path.Combine(LocalPath, info.ProgramName, info.VERSION, info.FILENAME);
             if (File.Exists(filePath))
             {
+                Console.WriteLine("删除文件" + filePath + "");
                 File.Delete(filePath);
             }
         }
@@ -225,6 +232,7 @@ namespace FileHelper
             string dir = Path.GetDirectoryName(filePath);
             if (!Directory.Exists(dir))
             {
+                Console.WriteLine("创建目录" + dir + "");
                 Directory.CreateDirectory(dir);
             }
             if (File.Exists(filePath))
@@ -239,6 +247,7 @@ namespace FileHelper
                     bw.Close();
                     fs.Close();
                 }
+                Console.WriteLine("写入文件" + filePath + "");
             }
         }
 

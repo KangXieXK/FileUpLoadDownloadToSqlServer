@@ -50,7 +50,7 @@ namespace FileHelper
 
         public void LogInfo(IMessageModel message)
         {
-            Log.Error(Newtonsoft.Json.JsonConvert.SerializeObject( message, Formatting.Indented));
+            //Log.Error(Newtonsoft.Json.JsonConvert.SerializeObject( message, Formatting.Indented));
         }
     }
 }

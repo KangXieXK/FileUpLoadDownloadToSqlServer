@@ -63,10 +63,7 @@ namespace FileHelper
             return mjm;
         }
 
-        public string GetKey()
-        {
-            return this.Key;
-        }
+       
 
         public T GetContentChange<T>()
         {

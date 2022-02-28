@@ -8,7 +8,7 @@ namespace FileHelper
 {
     public interface IModelBussiness
     {
-       
-        string GetKey();
+        public string Key { get; set; }
+
     }
 }

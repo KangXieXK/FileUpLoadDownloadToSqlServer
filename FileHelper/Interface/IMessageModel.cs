@@ -12,7 +12,7 @@ namespace FileHelper
 
         public int BussinessResult { get; set; }
 
-        public string Key { get; set; }
+        //public string Key { get; set; }
         object Content { get; set; }
 
         object Response { get; set; }

@@ -41,8 +41,6 @@ namespace CSIISHelper
                     listfile = new FileCheck().CheckBaseFolder(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "testUp"))
                 },
                 Key = "FileCheck"
-
-
             }, "127.0.0.1", 2020) ;
 
             string str = Console.ReadLine();

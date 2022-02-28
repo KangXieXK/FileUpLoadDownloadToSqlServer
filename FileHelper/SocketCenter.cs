@@ -43,16 +43,20 @@ namespace FileHelper
                 {
                     using (var scope = container.BeginLifetimeScope())
                     {
-                        MsgWork(msg, scope);
+                        var result = MsgWork(msg.Message, scope);
+                        if (result != null)
+                        {
+                            session.SendAsync(result.Jsonal());
+                        }
                     }
                 });
             await Server.Start();
         }
 
-        private IMessageModel MsgWork(WebSocketPackage msg, ILifetimeScope scope)
+        private IMessageModel MsgWork(string msg, ILifetimeScope scope)
         {
             var imm = scope.Resolve<IMessageModel>();
-            var result = imm.Objectal(msg.Message);
+            var result = imm.Objectal(msg);
             var logs = scope.Resolve<IMessageLog>();
             logs.InitLog(this.log);
             logs.InitSocket(this);
@@ -62,7 +66,7 @@ namespace FileHelper
                 {
                     logs.RecieveMessage(imm);
                     result.DecryptSelf(container.Resolve<ICrypt>());
-                    var bussiness = scope.ResolveNamed<IMessageBussiness>(result.GetKey());
+                    var bussiness = scope.ResolveNamed<IMessageBussiness>(result.Key);
                     if (bussiness != null)
                     {
                         var workResponse = bussiness.Work(result);
@@ -80,14 +84,14 @@ namespace FileHelper
                     result.SetMessageResponse("收到消息体为空的消息");
                     logs.LogInfo(result);
                 }
-                
+
             }
             catch (Exception ex)
             {
                 result.SetMessageResponse(ex.Message + ex.StackTrace);
                 logs.LogInfo(result);
             }
-            return result; 
+            return result;
         }
 
         public void Send(IMessageModel mjm, string ip, int port)
@@ -100,9 +104,13 @@ namespace FileHelper
                 {
                     using (var scope = container.BeginLifetimeScope())
                     {
-                        var imm = scope.Resolve<IMessageModel>();
-                        var result = imm.Objectal(msg.Text);
+                        //var result = MsgWork(msg.Text, scope);
+                        //if (result != null)
+                        //{
+                        //    //Client.Send(result.Jsonal());
+                        //}
                     }
+
                 });
             }
             using (var scope = container.BeginLifetimeScope())
