@@ -28,20 +28,20 @@ namespace CSIISHelper
 
             SocketCenter sc = new SocketCenter();
             sc.log = log;
-            sc.StartWsserver(2020);
-            sc.Send(new MessageJsonModel()
-            {
-                BussinessID = 1,
-                Content = new FileCheckQuest()
-                {
-                    ServerPathAbs = false,
-                    ServerPath = "test",
-                    ClientPath = "testUp",
-                    ClientPathAbs = false,
-                    listfile = new FileCheck().CheckBaseFolder(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "testUp"))
-                },
-                Key = "FileCheck"
-            }, "127.0.0.1", 2020) ;
+            sc.StartWsserver(65528);
+            //sc.Send(new MessageJsonModel()
+            //{
+            //    BussinessID = 1,
+            //    Content = new FileCheckQuest()
+            //    {
+            //        ServerPathAbs = false,
+            //        ServerPath = "test",
+            //        ClientPath = "testUp",
+            //        ClientPathAbs = false,
+            //        listfile = new FileCheck().CheckBaseFolder(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "testUp"))
+            //    },
+            //    Key = "FileCheck"
+            //}, "127.0.0.1", 2020) ;
 
             string str = Console.ReadLine();
 
