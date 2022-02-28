@@ -18,6 +18,8 @@ namespace FileHelper
 
     }
 
+
+
     public class FileInfoCompareResult
     {
         public FileInfoxk fileInfoxk { get; set; }
@@ -27,4 +29,21 @@ namespace FileHelper
         /// </summary>
         public int result { get; set; }
     }
+
+    public class FileCheckQuest
+    {
+        public string ServerPath;
+
+        public string ClientPath;
+
+        public bool ServerPathAbs;
+
+        public bool ClientPathAbs;
+
+        public int quest;
+
+        public List<FileInfoxk> listfile;
+    }
+
+
 }

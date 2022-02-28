@@ -26,9 +26,24 @@ namespace CSIISHelper
             // can make running without logging faster.
             if (log.IsDebugEnabled) log.Debug("This is a debug message");
 
-            //SocketCenter sc = new SocketCenter();
-            //sc.StartWsserver(2020);
-            //sc.Send(new MessageJsonModel() { BussinessID = 1, Content = "string", Key = "key1" }, "127.0.0.1", 2020);
+            SocketCenter sc = new SocketCenter();
+            sc.log = log;
+            sc.StartWsserver(2020);
+            sc.Send(new MessageJsonModel()
+            {
+                BussinessID = 1,
+                Content = new FileCheckQuest()
+                {
+                    ServerPathAbs = false,
+                    ServerPath = "test",
+                    ClientPath = "testUp",
+                    ClientPathAbs = false,
+                    listfile = new FileCheck().CheckBaseFolder(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "testUp"))
+                },
+                Key = "FileCheck"
+
+
+            }, "127.0.0.1", 2020) ;
 
             string str = Console.ReadLine();
 

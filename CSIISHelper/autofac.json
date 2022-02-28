@@ -18,25 +18,23 @@
       "autoActivate": true,
       "instanceScope": "per-dependency"
     },
-    "components",
-    :,
-    [
-      {
-        "type": "FileHelper.MessageJsonModel, FileHelper",
-        "services": [
-          {
-            "type": "FileHelper.IMessageModel"
-          },
-          {
-            "type": "FileHelper.IMessage"
-          },
-          {
-            "type": "FileHelper.IModelBussiness"
-          }
-        ],
-        "injectProperties": true,
-        "autoActivate": true,
-        "instanceScope": "per-dependency"
-      }
-    ]
+    "components": [
+    {
+      "type": "FileHelper.MessageJsonModel, FileHelper",
+      "services": [
+        {
+          "type": "FileHelper.IMessageModel"
+        },
+        {
+          "type": "FileHelper.IMessage"
+        },
+        {
+          "type": "FileHelper.IModelBussiness"
+        }
+      ],
+      "injectProperties": true,
+      "autoActivate": true,
+      "instanceScope": "per-dependency"
+    },
+  ]
 }

@@ -4,8 +4,12 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.WebSockets;
+using log4net;
+using log4net.Config;
+using log4net.Repository;
 using Autofac;
 using SuperSocket.WebSocket;
+using System.IO;
 
 namespace FileHelper
 {
@@ -22,12 +26,16 @@ namespace FileHelper
         ContainerBuilder builder = new ContainerBuilder();
         IContainer container { get; set; }
 
-        log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        public log4net.ILog log { get; set; }
         public async void StartWsserver(int port)
         {
             builder.RegisterType<Aes>().As<ICrypt>();
-            builder.RegisterType<MessageJsonModel>().As<IMessageModel>().As<IMessage>().Named<IMessageModel>("");
+            builder.RegisterType<MessageJsonModel>().As<IMessageModel>().As<IMessage>();
+            builder.RegisterType<FileCheck>().Named<IMessageBussiness>("FileCheck");
+            builder.RegisterType<FileLog>().As<IMessageLog>();
             container = builder.Build();
+
+
 
             Server = new WsServer();
             Server.MessageAction += new Action<SuperSocket.WebSocket.Server.WebSocketSession,
@@ -45,21 +53,41 @@ namespace FileHelper
         {
             var imm = scope.Resolve<IMessageModel>();
             var result = imm.Objectal(msg.Message);
-            result.DecryptSelf(container.Resolve<ICrypt>());
-            if (result != null)
+            var logs = scope.Resolve<IMessageLog>();
+            logs.InitLog(this.log);
+            logs.InitSocket(this);
+            try
             {
-                var bussiness = scope.ResolveNamed<IMessageBussiness>(result.GetKey());
-                if (bussiness != null)
+                if (result != null)
                 {
-                    var workResponse = bussiness.Work(result);
-                    return workResponse;
+                    logs.RecieveMessage(imm);
+                    result.DecryptSelf(container.Resolve<ICrypt>());
+                    var bussiness = scope.ResolveNamed<IMessageBussiness>(result.GetKey());
+                    if (bussiness != null)
+                    {
+                        var workResponse = bussiness.Work(result);
+                        logs.ResponseMessage(workResponse);
+                        return workResponse;
+                    }
+                    else
+                    {
+                        result.SetMessageResponse("收到消息体解密失败的消息");
+                        logs.LogInfo(result);
+                    }
                 }
                 else
                 {
-                    return null;
+                    result.SetMessageResponse("收到消息体为空的消息");
+                    logs.LogInfo(result);
                 }
+                
             }
-            return null;
+            catch (Exception ex)
+            {
+                result.SetMessageResponse(ex.Message + ex.StackTrace);
+                logs.LogInfo(result);
+            }
+            return result; 
         }
 
         public void Send(IMessageModel mjm, string ip, int port)

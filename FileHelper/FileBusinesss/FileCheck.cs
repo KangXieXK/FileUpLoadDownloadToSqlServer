@@ -8,8 +8,57 @@ using System.Threading.Tasks;
 
 namespace FileHelper
 {
-    public class FileCheck
+    public class FileCheck : IMessageBussiness
     {
+        public IMessageModel Work(IMessageModel messageModel)
+        {
+            var msg = messageModel.GetContentChange<FileCheckQuest>();
+            if (msg == null)
+            {
+                messageModel.MessageErrorResponse();
+            }
+            else
+            {
+                if (msg.quest == 0)
+                {
+                    if (!msg.ServerPathAbs)
+                    {
+                        msg.ServerPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, msg.ServerPath);
+                    }
+
+                    var old = this.CheckBaseFolder(msg.ServerPath);
+                    var result = this.Compare(msg.listfile, old);
+                    if (result?.Count > 0)
+                    {
+                        var deletelist = result.FindAll(i => i.result == 2 || i.result == 3);
+                        var uploadlist = result.FindAll(i => i.result == 1 || i.result == 2);
+                        foreach (var item in deletelist)
+                        {
+                            this.DeleteFile(item.fileInfoxk, msg.ServerPath);
+                        }
+                        if (uploadlist?.Count > 0)
+                        {
+                            FileCheckQuest responsemsg = new FileCheckQuest()
+                            {
+                                ClientPath = msg.ClientPath,
+                                ClientPathAbs = msg.ClientPathAbs,
+                                ServerPath = msg.ServerPath,
+                                ServerPathAbs = msg.ServerPathAbs,
+                                listfile = uploadlist.Select(i => i.fileInfoxk).ToList(),
+                                quest = msg.quest + 1
+                            };
+                            messageModel.SetMessageResponse(responsemsg);
+                        }
+                    }
+                }
+            }
+            return messageModel;
+        }
+
+        public string GetKey()
+        {
+            return "Check";
+        }
         public Encoding Codeing = Encoding.UTF8;
         public List<FileInfoxk> CheckBaseFolder(string path)
         {
@@ -104,7 +153,7 @@ namespace FileHelper
                 MD5 = strmd5,
                 ProgramName = ProgramName,
                 VERSION = Version,
-                
+
             };
             return model;
         }
@@ -213,7 +262,7 @@ namespace FileHelper
         }
 
 
-        public List<FileInfoxk> GetUploadFile(object obj,string FileStorePath)
+        public List<FileInfoxk> GetUploadFile(object obj, string FileStorePath)
         {
             List<FileInfoxk> mjm = Newtonsoft.Json.JsonConvert.DeserializeObject<List<FileInfoxk>>(obj.ToString());
             List<FileInfoxk> temp = new List<FileInfoxk>();
@@ -228,7 +277,7 @@ namespace FileHelper
                     var uploadlist = result.FindAll(i => i.result == 1 || i.result == 2);
                     foreach (var item in deletelist)
                     {
-                        fc.DeleteFile(item.fileInfoxk,FileStorePath);
+                        fc.DeleteFile(item.fileInfoxk, FileStorePath);
                     }
                     temp.AddRange(uploadlist.Select(i => i.fileInfoxk));
                 }
@@ -245,7 +294,7 @@ namespace FileHelper
                 switch (mjm.BussinessID)
                 {
                     case 1:
-                        //GetUploadFile(mjm.Content); break;
+                    //GetUploadFile(mjm.Content); break;
                     default: break;
                 }
             }
@@ -280,5 +329,7 @@ namespace FileHelper
                 }
             }
         }
+
+
     }
 }

@@ -17,14 +17,21 @@ namespace FileHelper
 
         public object Content { get; set; }
         public bool IsEncrpyt { get; set; }
+
+        public object Response { get; set; }
         public void DecryptSelf(ICrypt crypt)
         {
             if (Content != null)
             {
-
-                Content = crypt.Decrypt(Content.ToString());
+                try
+                {
+                    Content = crypt.Decrypt(Content.ToString());
+                }
+                catch
+                {
+                    throw new Exception("解密失败");
+                }
                 IsEncrpyt = false;
-
             }
             else
             {
@@ -36,7 +43,7 @@ namespace FileHelper
         {
             if (Content != null)
             {
-                Content = crypt.Encrypt(Content.ToString());
+                Content = crypt.Encrypt(Newtonsoft.Json.JsonConvert.SerializeObject(Content));
                 IsEncrpyt = true;
             }
             else
@@ -59,6 +66,21 @@ namespace FileHelper
         public string GetKey()
         {
             return this.Key;
+        }
+
+        public T GetContentChange<T>()
+        {
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(Content.ToString());
+        }
+
+        public void MessageErrorResponse()
+        {
+            this.Response = "ErrorMessage";
+        }
+
+        public void SetMessageResponse(object value)
+        {
+            this.Response = value;
         }
     }
 }
